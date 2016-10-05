@@ -4,23 +4,30 @@ http://www.webstepbook.com/
 You don't need to download or edit this file.
 */
 
-h1, h2 {
+h1, h2 
+{
 	text-align: center;
 }
 
-p {
+
+p 
+{
 	width: 600px;
 	margin: 1em auto;
 }
 
-#maze {
+
+#maze 
+{
 	margin: auto;
 	position: relative;
 	height: 300px;
 	width: 500px;
 }
 
-#start, #end {
+
+#start, #end 
+{
 	position: absolute;
 	top: 205px;
 	height: 30px;
@@ -33,28 +40,43 @@ p {
 	text-align: center;
 }
 
-#maze #start {
+
+#maze #start 
+{
 	background-color: #88ff88;
 	left: 0;
 }
 
-#maze #end {
+
+#maze #end 
+{
 	background-color: #8888ff;
 	right: 0;
 }
 
-div.boundary {
+
+div.boundary 
+{
 	background-color: #eeeeee;
 	border: 1px solid black;
 }
 
-div.boundary.example {
+
+div.boundary.example 
+{
 	margin: auto;
 	width: 100px;
 	height: 25px;
 }
 
-div.youlose {
+
+.youlose 
+{
+	background-color: #ff8888;
+}
+
+div.youlose 
+{
 	background-color: #ff8888;
 }
 
@@ -63,7 +85,8 @@ Hack hack hack; these are CSS "sibling selectors" for selecting
 neighboring elements.  Necessary to avoid giving ids to the boundary divs
 */
 
-#maze div.boundary {
+#maze div.boundary 
+{
 	position: absolute;
 
 	top: 0;
@@ -73,7 +96,9 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	z-index: 1;
 }
 
-#maze div.boundary + div.boundary {
+
+#maze div.boundary + div.boundary 
+{
 	border-left: none;
 	border-right: none;
 	z-index: 2;
@@ -83,7 +108,9 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	width: 198px;
 }
 
-#maze div.boundary + div.boundary + div.boundary {
+
+#maze div.boundary + div.boundary + div.boundary 
+{
 	border-left: 1px black solid;
 	border-right: 1px black solid;
 	z-index: 1;
@@ -93,7 +120,9 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	width: 150px;
 }
 
-#maze div.boundary + div.boundary + div.boundary + div.boundary {
+
+#maze div.boundary + div.boundary + div.boundary + div.boundary 
+{
 	border: 1px black solid;
 
 	top: 250px;
@@ -102,7 +131,9 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	width: 498px;
 }
 
-#maze div.boundary + div.boundary + div.boundary + div.boundary + div.boundary {
+
+#maze div.boundary + div.boundary + div.boundary + div.boundary + div.boundary 
+{
 	border-bottom: none;
 
 	top: 100px;
@@ -110,3 +141,5 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	height: 150px;
 	width: 98px;
 }
+
+
