@@ -43,6 +43,31 @@ window.onload=function()
 		}		
 	}
 
+
+
+	//Exercise 4
+	var resetVariable = document.getElementById("start");
+	resetVariable.addEventListener("click", function()
+	{
+		touchBoundary = false;
+		var resetWalls = document.querySelectorAll(".boundary");
+		for (var i = 0; i < resetWalls.length; i++) 
+		{
+			reset(resetWalls);
+		}
+
+		function reset(walls)
+		{
+			for (var i = walls.length - 1; i >= 0; i--) 
+			{
+				walls[i].setAttribute("class", "boundary");
+			}
+		}
+	});
+
+
+	
+
 };
 
 
