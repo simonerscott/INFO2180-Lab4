@@ -19,6 +19,7 @@ window.onload=function()
 		otherWalls[i].addEventListener("mouseover", function()
 		{
 			touchWall(otherWalls);
+			statusFunction();
 			touchBoundary = true;
 		});
 	}
@@ -68,12 +69,13 @@ window.onload=function()
 
 
 
+
 	//Exercise 5: On-Page Status Updates
 	var x = document.querySelectorAll(".boundary");
 	var y = document.getElementById("end");
 
-	//x.addEventListener("mouseover", status);
-	y.addEventListener("mouseover", status);
+	//x.addEventListener("mouseover", statusFunction);
+	y.addEventListener("mouseover", statusFunction);
 
 
 	for (var i = 0; i < x.length; i++) 
@@ -84,9 +86,9 @@ window.onload=function()
 		}
 	}
 
-	function status()
+	function statusFunction()
 	{
-		if (touchBoundary === false ) 
+		if (touchBoundary === false )  
 		{
 			document.getElementById("status").textContent = "You Win! :-)";
 		}
