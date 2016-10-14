@@ -12,6 +12,7 @@ window.onload=function()
 
 
 
+
 	//Exercise 2: All Boundaries Glow Red on Hover
 	var otherWalls = document.querySelectorAll(".boundary");
 	for (var i = 0; i < otherWalls.length; i++) 
@@ -36,6 +37,7 @@ window.onload=function()
 
 
 
+
 	//Exercise 3: Alerts on Successful Completion of Maze
 	/*document.getElementById("end").addEventListener("mouseover",mouseOverEnd);
 	function mouseOverEnd()
@@ -45,6 +47,7 @@ window.onload=function()
 				alert("You Win");
 			}
 	}*/
+
 
 
 	
@@ -73,6 +76,7 @@ window.onload=function()
 
 
 
+
 	//Exercise 5: On-Page Status Updates
 	var end = document.getElementById("end");
 	end.addEventListener("mouseover", statusFunction);
@@ -91,6 +95,7 @@ window.onload=function()
 
 
 
+
 	//Exercise 6: Disallow Cheating
 	var startGame = document.getElementById("start");
 	var mazeDiv = document.getElementById("maze");
@@ -101,8 +106,6 @@ window.onload=function()
 	var offsetWidth = mazeDiv.offsetWidth;
 	
 
-
-	//startGame.onclick =	startGameFunction();
 	startGame.addEventListener("click", startGameFunction);
 
 	function startGameFunction()
@@ -114,6 +117,10 @@ window.onload=function()
 			console.log(" " + x + " " +y); //location of mouse
 			console.log(offsetLeft);
 			
+
+			/*I think that only the first if statement is adequate since there is only one way
+			to go around the maze.*/
+
 			if( x < offsetLeft)
 			{
 				touchBoundary = true;
@@ -121,7 +128,28 @@ window.onload=function()
 				touchWall(wall2);
 				document.getElementById("status").textContent = "You Lose! :'-(";
 			}
-			
+			else if (x > (offsetLeft + offsetWidth))
+			{
+				touchBoundary = true;
+				var wall2 = document.querySelectorAll(".boundary");
+				touchWall(wall2);
+				document.getElementById("status").textContent = "You Lose! :'-(";
+			}
+			else if (y < offsetTop)
+			{
+				touchBoundary = true;
+				var wall2 = document.querySelectorAll(".boundary");
+				touchWall(wall2);
+				document.getElementById("status").textContent = "You Lose! :'-(";
+			}
+			else if (y > (offsetTop + offsetHeight))
+			{
+				touchBoundary = true;
+				var wall2 = document.querySelectorAll(".boundary");
+				touchWall(wall2);
+				document.getElementById("status").textContent = "You Lose! :'-(";
+			}
+
 		});
 	}
 	
