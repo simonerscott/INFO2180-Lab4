@@ -114,9 +114,7 @@ window.onload=function()
 		{
 			var x = event.clientX;
 			var y = event.clientY;
-			console.log(" " + x + " " +y); //location of mouse
-			console.log(offsetLeft);
-			
+						
 
 			/*I think that only the first if statement is adequate since there is only one way
 			to go around the maze.*/
