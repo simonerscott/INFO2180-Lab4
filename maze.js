@@ -93,11 +93,38 @@ window.onload=function()
 
 	//Exercise 6: Disallow Cheating
 	var startGame = document.getElementById("start");
+	var mazeDiv = document.getElementById("maze");
 
-	startGame.addEventListener("click", function()
+	var offsetLeft = mazeDiv.offsetLeft;
+	var offsetTop = mazeDiv.offsetTop;
+	var offsetHeight = mazeDiv.offsetHeight;
+	var offsetWidth = mazeDiv.offsetWidth;
+	
+
+
+	//startGame.onclick =	startGameFunction();
+	startGame.addEventListener("click", startGameFunction);
+
+	function startGameFunction()
 	{
-
-	});
+		window.addEventListener("mousemove", function(event)
+		{
+			var x = event.clientX;
+			var y = event.clientY;
+			console.log(" " + x + " " +y); //location of mouse
+			console.log(offsetLeft);
+			
+			if( x < offsetLeft)
+			{
+				touchBoundary = true;
+				var wall2 = document.querySelectorAll(".boundary");
+				touchWall(wall2);
+				document.getElementById("status").textContent = "You Lose! :'-(";
+			}
+			
+		});
+	}
+	
 
 
 };
