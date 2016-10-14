@@ -91,6 +91,13 @@ window.onload=function()
 
 
 
+	//Exercise 6: Disallow Cheating
+	var startGame = document.getElementById("start");
+
+	startGame.addEventListener("click", function()
+	{
+
+	});
 
 
 };
