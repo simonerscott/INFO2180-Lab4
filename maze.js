@@ -18,16 +18,17 @@ window.onload=function()
 	{
 		otherWalls[i].addEventListener("mouseover", function()
 		{
+			touchBoundary = true;
 			touchWall(otherWalls);
 			statusFunction();
-			touchBoundary = true;
 		});
 	}
 
 
 	function touchWall(walls)
 	{
-		for (var i = walls.length - 1; i >= 0; i--) 
+		
+		for (var i = 0 ; i < walls.length; i++) 
 		{
 			walls[i].setAttribute("class", "boundary youlose");
 		}
@@ -65,30 +66,20 @@ window.onload=function()
 				walls[i].setAttribute("class", "boundary");
 			}
 		}
+
+		document.getElementById("status").textContent = "Move your mouse over the 'S' to begin.";
 	});
 
 
 
 
 	//Exercise 5: On-Page Status Updates
-	var x = document.querySelectorAll(".boundary");
-	var y = document.getElementById("end");
-
-	//x.addEventListener("mouseover", statusFunction);
-	y.addEventListener("mouseover", statusFunction);
-
-
-	for (var i = 0; i < x.length; i++) 
-	{
-		if (x[i].className === "youlose")
-		{
-			touchBoundary = true;
-		}
-	}
+	var end = document.getElementById("end");
+	end.addEventListener("mouseover", statusFunction);
 
 	function statusFunction()
 	{
-		if (touchBoundary === false )  
+		if (touchBoundary === false)  
 		{
 			document.getElementById("status").textContent = "You Win! :-)";
 		}
